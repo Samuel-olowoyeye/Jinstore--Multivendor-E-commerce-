@@ -1,0 +1,73 @@
+const RelatedProduct = [
+    {
+      id: '23',
+      image: "/assets/products/wraps.svg",
+      badge: "/assets/products/span.badge.svg",
+      name: 'Large Garden Spinach & Herb Wrap Tortillas – 15oz_6ct',
+      description: "Philadelphia Original Cream Cheese Spread – 12oz",
+      price: 27.90,
+      discountPrice: 32.90,
+      discount: 16,
+      rating: 3,
+    },
+
+    {
+      id: '24',
+      image: "/assets/products/peach.svg",
+      badge: "/assets/products/span.badge2.svg",
+      name: 'Peach – each',
+      description: "Cantaloupe Melon Fresh Organic Cut",
+      price: 0.75,
+      discountPrice: 1.75,
+      discount: 58,
+      rating: 3,
+    },
+    {
+      id: '25',
+      image: "/assets/products/potatoes.svg",
+      badge: "/assets/products/span.badge2.svg",
+      name: 'Yellow Potatoes Whole Fresh, 5lb Bag',
+      description: "Vitaminwater zero sugar squeezed electrolyte…",
+      price: 0.50,
+      discountPrice: 1.99,
+      discount: 75,
+      rating: 3,
+    },
+   
+    {
+      id: '26',
+      image: "/assets/products/cauliflower.svg",
+      badge: "/assets/products/span.badge.svg",
+      name: 'Fresh Cauliflower, Each',
+      description: "Pearl Milling Company Original Syrup – 24 fl oz",
+      price: 12.79,
+      discountPrice: 14.79,
+      discount: 14,
+      rating: 2,
+    },
+    {
+      id: '27',
+      image: "/assets/products/broccoli.svg",
+      badge: "/assets/products/span.badge2.svg",
+      name: 'Fresh Broccoli Crowns, Each',
+      description: "Real Plant-Powered Protein Shake – Double Chocolate – 4pk_44 fl oz",
+      price: 11.54,
+      discountPrice: 17.88,
+      discount: 36,
+      rating: 3,
+    },
+    {
+      id: '28',
+      image: "/assets/products/eggplant.svg",
+      badge: "/assets/products/span.badge.svg",
+      name: 'Fresh Purple Eggplant',
+      description: "Great Value Rising Crust Frozen Pizza, Supreme",
+      price: 2.99,
+      discountPrice: 3.99,
+      discount: 26,
+      rating: 3,
+    },
+    
+  ];
+  
+  export default RelatedProduct;
