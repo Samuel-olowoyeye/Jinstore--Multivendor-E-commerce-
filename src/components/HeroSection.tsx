@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React, { Suspense } from 'react'
 import Main from "@/components/main";
 import HeroBanner from "@/components/heroBanner";
 import Navs from "@/components/Navs";
@@ -6,7 +7,9 @@ import Navs from "@/components/Navs";
 const HeroSection = () => {
   return (
     <div>
-        <Navs />
+        <Suspense fallback={<p>Loading navigation...</p>}>
+            <Navs />
+          </Suspense>
         <Main />
         <HeroBanner />
     </div>
