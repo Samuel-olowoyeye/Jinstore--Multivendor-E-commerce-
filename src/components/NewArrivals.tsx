@@ -46,7 +46,7 @@ const NewArrivals = () => {
 						<h3 className='pt-[10px] pr-1.5 pl-[15px] w-auto h-auto font-regular text-[#030712] text-[13px] lg:text-[14px] line-clamp-2'>{product.name}</h3>
 
 						<div className='flex flex-row items-center pt-[15px]'>
-							<Image src="/assets/products/icon.svg" alt="New Arrival 1" width={67.88} height={11} className='ml-[15px] w-[47.88px] lg:w-[67.88px] h-[10px] lg:h-[11px] object-cover' />
+							<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='ml-[15px] w-[47.88px] lg:w-[67.88px] h-[10px] lg:h-[11px] object-cover' />
 							<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
 							<span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
 						</div>

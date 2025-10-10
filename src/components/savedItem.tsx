@@ -64,7 +64,7 @@ const SavedItem = () => {
                     <h3 className='pt-[10px] pr-1.5 pl-[15px] xl:pl-[18px] w-auto h-auto font-regular text-[#030712] text-[13px] lg:text-[16px] line-clamp-2'>{item.name}</h3>
 
                     <div className='flex flex-row items-center pt-[9px]'>
-                      <Image src="/assets/products/icon.svg" alt="icon" width={50.88} height={11} className='ml-[15px] xl:ml-[18px] w-[45.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+                      <Image src="/assets/products/Icon.svg" alt="icon" width={50.88} height={11} className='ml-[15px] xl:ml-[18px] w-[45.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
                       <Image src="/assets/products/star.svg" alt="star" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
                       <span className='pl-[8px] text-[#6b7280] text-[12px]'>{item.rating}</span>
                     </div>

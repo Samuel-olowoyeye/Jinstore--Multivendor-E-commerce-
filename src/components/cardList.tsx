@@ -74,7 +74,7 @@ const totalPrice = calculateTotalPrice(cartItems);
                 <h2 className="pb-2 lg:pb-4 w-[150px] lg:w-[300px] font-semibold text-[12px] lg:text-[16px]">{item.name}</h2>
 
                 <div className='flex flex-row h-auto'>
-                  <Image src="/assets/products/icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[50.88px] h-[11px] object-cover' />
+                  <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[50.88px] h-[11px] object-cover' />
                   <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[11.35px] h-[11px] object-cover' />
                   <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[11.35px] h-[11px] object-cover' />
                   <span className='-mt-[7px] lg:-mt-[9px] ml-[4px] lg:ml-[8px] py-[3.5px] pr-[4.63px] pl-[5px] rounded-lg font-bold text-[#030712] text-[11px] lg:text-[13px]'>{item.rating}</span>
@@ -121,7 +121,7 @@ const totalPrice = calculateTotalPrice(cartItems);
                 <Image src="/assets/cart/empty.svg" alt="empty-cart" width={160} height={160} className='mx-auto lg:mx-[300px] w-[60px] lg:w-[160px] h-[60px] lg:h-[160px]'/>
         
                 <div className='mx-auto lg:mx-3 mt-[30px] lg:mt-[60px] border border-[#E5E7EB] w-[240px] lg:w-[760px] h-auto lg:h-[61px]'>
-                        <h3 className='items-center px-[36px] py-[13px] lg:pr-[220.36px] lg:pl-[236.69px] font-bold text-[#F03E3E] text-[12px] lg:text-[18px]'>Your cart is currently empty.</h3>
+                        <h3 className='items-center px-[34px] py-[13px] lg:pr-[220.36px] lg:pl-[236.69px] font-bold text-[#F03E3E] text-[12px] lg:text-[18px]'>Your cart is currently empty.</h3>
                 </div>
 
                     <button className='flex bg-[#212529] mx-auto mt-[20px] mb-4 lg:ml-[320px] pt-2.5 pr-[17.65px] pb-[13px] pl-[18px] rounded-lg lg:w-auto h-[42px] font-bold text-[#ffff] text-[12px] lg:text-[14px] cursor-pointer'>

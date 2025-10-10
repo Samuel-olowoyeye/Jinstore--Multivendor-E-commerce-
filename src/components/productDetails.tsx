@@ -112,7 +112,7 @@ const decreaseQuantity = (itemId: number | string) => {
 				<div className='lg:pl-[40px]'>
 					<h1 className='pt-12 lg:pt-0 w-full lg:w-[601px] xl:w-[633.81px] h-auto font-bold text-[#030712] text-[26px] lg:text-[38px] leading-[45.6px] tracking-tighter'>{product.name}</h1>
 					<div className='flex flex-row pt-[15.6px] pb-[17.5px] border-[#E5E7EB] border-b-2 w-full lg:w-[590px] xl:w-[633.81px] h-auto'>
-						<Image src="/assets/products/icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+						<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
 						<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
 						<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
 						<span className='-mt-[6px] lg:-mt-[9px] ml-[8px] py-[1.5px] lg:py-[3.5px] pr-[4.63px] pl-[5px] border-[#E5E7EB] border-2 rounded-lg font-bold text-[#030712] text-[10px] lg:text-[13px]'>{product.rating}.00</span>

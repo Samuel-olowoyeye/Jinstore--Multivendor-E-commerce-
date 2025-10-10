@@ -28,7 +28,7 @@ const Companies = () => {
 							<h3 className='font-normal text-[#6B7280] text-[12px]'>Featured</h3>
 
 							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
 								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
 								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>41</span>
 							</div>
@@ -44,7 +44,7 @@ const Companies = () => {
 							<h3 className='font-regular text-[#6B7280] text-[12px]'>Featured</h3>
 
 							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
 								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
 								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>37</span>
 							</div>
@@ -60,7 +60,7 @@ const Companies = () => {
 							<h3 className='font-regular text-[#6B7280] text-[12px]'>Featured</h3>
 
 							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
 								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
 								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>35</span>
 							</div>
@@ -76,7 +76,7 @@ const Companies = () => {
 							<h3 className='font-regular text-[#6B7280] text-[12px]'>Featured</h3>
 
 							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
 								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
 								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>30</span>
 							</div>
