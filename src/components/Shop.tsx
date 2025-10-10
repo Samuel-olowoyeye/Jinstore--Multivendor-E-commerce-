@@ -33,7 +33,8 @@ const Shop = () => {
  
 
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
-	const sortOption = useSelector((state) => state.category.sortOption);
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const sortOption = useSelector((state: any) => state.category.sortOption);
 
 		{/* filter and sort menu open functionality */}
 		const [openFilter, setOpenFilter] = useState(false)

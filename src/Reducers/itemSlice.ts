@@ -4,14 +4,17 @@ import { RootState } from '../store/store';
 // Define Product type
 export interface Product {
   id: string;
+  image: string;
   name: string;
   description: string;
   price: number;
-  discount: number;
   discountPrice: number;
-  image: string;
-  badge: string;
+  discount: number;
   rating: number;
+  category: string;
+  badge?: string;          
+  secondImage?: string;
+  thirdImage?: string;  
 }
 
 // Alias for clarity

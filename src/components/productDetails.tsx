@@ -10,7 +10,7 @@ import NotFound from './NotFound';
 import Products from '../Data/Products';
 import { useParams} from 'next/navigation';
 import Link from 'next/link';
-import { toggleSavedItem, isItemSaved } from '../Reducers/itemSlice';
+import { toggleSavedItem, isItemSaved, Product } from '../Reducers/itemSlice';
 import { RootState } from '../store/store';
 
 
@@ -187,7 +187,7 @@ const decreaseQuantity = (itemId: number | string) => {
 						<div className='flex flex-row'>
 							<div className='relative my-auto lg:my-[8.29px] border border-[#E5E7EB] rounded-lg w-[30px] lg:w-[36px] h-[30px] lg:h-[36px]'>
 								<button
-									onClick={() => dispatch(toggleSavedItem(product))}
+									onClick={() => dispatch(toggleSavedItem(product as Product))}
 									className={`p-0.5 absolute top-1/6 right-1/6 lg:top-1.5 lg:right-0.5 cursor-pointer ${isFavorited ? 'fill-red-500  text-red-500  transition-colors duration-300 ease-in-out ' : ' text-gray-600'}`}
 								>
 									<Heart className="w-[14.26px] lg:w-[18.26px] h-[14.43px] lg:h-[16.43px]" />

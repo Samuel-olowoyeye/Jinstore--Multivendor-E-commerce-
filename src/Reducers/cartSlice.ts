@@ -16,16 +16,17 @@ export interface CartItem extends Product {
 
 interface Product {
   id: string;
+  image: string;
   name: string;
   description: string;
   price: number;
+  discountPrice: number;
   discount: number;
-  discountPrice: number
-  image: string;
-  // secondImage: string;
-  // thirdImage: string;
-  badge: string;
   rating: number;
+  category: string;
+  badge?: string;        
+  secondImage?: string;  
+  thirdImage?: string;  
 }
 
 
