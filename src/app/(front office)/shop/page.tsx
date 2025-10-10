@@ -1,4 +1,5 @@
-import React from 'react'
+"use client";
+import React, { Suspense } from 'react'
 import Header from "@/components/Header";
 import Navs from "@/components/Navs";
 import Footer from "@/components/Footer";
@@ -12,7 +13,9 @@ const page = () => {
   return (
     <div>
          <Header />
-         <Navs />
+         <Suspense fallback={<p>Loading navigation...</p>}>
+          <Navs />
+        </Suspense>
         	<Shop />
          <Footer/>
     </div>
