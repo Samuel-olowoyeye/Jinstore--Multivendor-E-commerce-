@@ -16,7 +16,10 @@ const page = () => {
          <Suspense fallback={<p>Loading navigation...</p>}>
           <Navs />
         </Suspense>
-        	<Shop />
+        	
+          <Suspense fallback={<p>Loading navigation...</p>}>
+          <Shop />
+          </Suspense>
          <Footer/>
     </div>
   )
