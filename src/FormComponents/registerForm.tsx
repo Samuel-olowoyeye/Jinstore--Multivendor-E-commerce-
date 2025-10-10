@@ -7,41 +7,41 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 
 const RegisterForm = () => {
   return (
-    <div className='bg-[#ffff] stroke-[#E5E7EB] w-full h-auto text-[#6B7280] px-4 lg:px-[80px] xl:px-[280px] 2xl:px-[600px] pb-[167.61px]'>
-        <div className='flex flex-row justify-between w-full h-[48px] items-center pb-[20px] '>
-                <div className='flex flex-row items-center '>
-            <div className='flex flex-row pr-[6px] items-center'>
-                <h1 className='text-[#9CA3AF] hover:text-[#030712] lg:text-[12px] text-[10px] pt-[22.39px] cursor-pointer '>Home</h1>
-                <ChevronRight  className='lg:w-4 w-3 space-x-1 mt-[24px] lg:mt-[22.39px]'/>
+    <div className='bg-[#ffff] stroke-[#E5E7EB] px-4 lg:px-[80px] 2xl:px-[600px] xl:px-[280px] pb-[167.61px] w-full h-auto text-[#6B7280]'>
+        <div className='flex flex-row justify-between items-center pb-[20px] w-full h-[48px]'>
+                <div className='flex flex-row items-center'>
+            <div className='flex flex-row items-center pr-[6px]'>
+                <h1 className='pt-30 lg:pt-[22.39px] text-[#9CA3AF] text-[10px] lg:text-[12px] hover:text-[#030712] cursor-pointer'>Home</h1>
+                <ChevronRight  className='space-x-1 mt-30 lg:mt-[22.39px] w-3 lg:w-4'/>
             </div>
-                <h1 className='text-[#030712] font-normal lg:text-[12px] text-[10px] pt-[22.39px] '>My account</h1>
+                <h1 className='pt-30 lg:pt-[22.39px] font-normal text-[#030712] text-[10px] lg:text-[12px]'>My account</h1>
         </div>		
         </div>
 				
 				
-        <div className='lg:w-[480px] lg:h-[593px] lg:mx-[440px] mt-[66px] lg:mt-[106px] '>
+        <div className='lg:mx-[440px] mt-[66px] lg:mt-[106px] lg:w-[480px] lg:h-[593px]'>
             <div>
                 <div className='flex flex-row justify-center font-semibold'>
-                    <Link href='/Login'><h1 className='text-[#9CA3AF] font-semibold text-[20px] lg:text-[24px] pr-[28px]'>Login</h1></Link>
-                    <h1 className='text-[#030712] font-semibold text-[20px] lg:text-[24px]'>Register</h1>
+                    <Link href='/Login'><h1 className='pr-[28px] font-semibold text-[#9CA3AF] text-[20px] lg:text-[24px]'>Login</h1></Link>
+                    <h1 className='font-semibold text-[#030712] text-[20px] lg:text-[24px]'>Register</h1>
                 </div>
                         
 								<div>
-										<h3 className='text-center text-[#030712] text-[12px] lg:pl-[41.14px] lg:pr-[40.8px] pt-[31px] pb-[16px] tracking-tight'>There are many advantages to creating an account: the payment process is faster, shipment tracking is possible and much more.</h3>
+										<h3 className='pt-[31px] lg:pr-[40.8px] pb-[16px] lg:pl-[41.14px] text-[#030712] text-[12px] text-center tracking-tight'>There are many advantages to creating an account: the payment process is faster, shipment tracking is possible and much more.</h3>
 								</div>
                         
 								<div>
 										<form className='flex flex-col px-[5px]'>
-												<label className='text-[#6B7280] pt-[15.25px] pb-[5.75px] text-[13px]'>Username *</label>
-												<input type="text" className='border-1 border-[#E5E7EB] rounded-lg  h-[42px] mt-[8px] px-4'/>
+												<label className='pt-[15.25px] pb-[5.75px] text-[#6B7280] text-[13px]'>Username *</label>
+												<input type="text" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]'/>
 
-												<label className='text-[#6B7280] pt-[15.25px] pb-[5.75px] text-[13px]'>Email address *</label>
-												<input type="email" className='border-1 border-[#E5E7EB] rounded-lg  h-[42px] mt-[8px] px-4'/>
+												<label className='pt-[15.25px] pb-[5.75px] text-[#6B7280] text-[13px]'>Email address *</label>
+												<input type="email" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]'/>
 
-												<label className='text-[#6B7280] text-[12px] mt-[15.25px]'>Password</label>
-												<input type="password" className='border-1 border-[#E5E7EB] rounded-lg h-[42px] mt-[8px] px-4' />
+												<label className='mt-[15.25px] text-[#6B7280] text-[12px]'>Password</label>
+												<input type="password" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]' />
 
-												<div className='flex flex-col justify-between mt-[16.5px] '>
+												<div className='flex flex-col justify-between mt-[16.5px]'>
 													<RadioGroup defaultValue="option-one">
 															<div className="flex items-center space-x-2">
 																<RadioGroupItem value="option-one" id="option-one" />
@@ -52,10 +52,10 @@ const RegisterForm = () => {
 																<Label className='text-[#030712] text-[13px]' htmlFor="option-two"> I am a vendor</Label>
 															</div>
 													</RadioGroup>
-														<p className='text-[#030712] text-[12px] lg:text-[13px] pt-[17px] leading-[19.5px] tracking-tight'>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <span className='text-[#634C9F]'>privacy policy.</span></p>
+														<p className='pt-[17px] text-[#030712] text-[12px] lg:text-[13px] leading-[19.5px] tracking-tight'>Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <span className='text-[#634C9F]'>privacy policy.</span></p>
 												</div>
 
-												<button type="submit" className='bg-[#634c9f] text-white font-semibold text-[13px] lg:text-[14px] h-[48px] rounded-lg mt-[35px]'>Register</button>
+												<button type="submit" className='bg-[#634c9f] mt-[35px] rounded-lg h-[48px] font-semibold text-[13px] text-white lg:text-[14px]'>Register</button>
 										</form>
 								</div>
 
