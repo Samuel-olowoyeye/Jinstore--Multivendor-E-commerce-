@@ -9,6 +9,7 @@ const BestSellersProducts = [
       discountPrice: 6.13,
       discount: 19,
       rating: 3,
+      category: "Healthcare",
     },
 
     {
@@ -21,6 +22,7 @@ const BestSellersProducts = [
       discountPrice: 2.98,
       discount: 19,
       rating: 3,
+      category: "Fruits & Vegetables",
     },
     {
       id: '15',
@@ -32,6 +34,7 @@ const BestSellersProducts = [
       discountPrice: 8.99,
       discount: 31,
       rating: 3,
+      category: "Beverages",
     },
    
     {
@@ -44,6 +47,7 @@ const BestSellersProducts = [
       discountPrice: 3.38,
       discount: 30,
       rating: 3,
+      category: "Grocery & Staples",
     },
     {
       id: '17',
@@ -55,6 +59,7 @@ const BestSellersProducts = [
       discountPrice: 17.89,
       discount: 17,
       rating: 3,
+      category: "Beverages",
     },
     {
       id: '18',
@@ -66,6 +71,7 @@ const BestSellersProducts = [
       discountPrice: 9.99,
       discount: 11,
       rating: 3,
+      category: "Frozen Foods",
     },
     {
       id: '19',
@@ -77,6 +83,7 @@ const BestSellersProducts = [
       discountPrice: 14.77,
       discount: 21,
       rating: 3,
+      category: "Breads & brakery",
     },
     {
       id: '20',
@@ -88,6 +95,7 @@ const BestSellersProducts = [
       discountPrice: 9.99,
       discount: 31,
       rating: 3,
+       category: "Beverages",
     },
     
   
@@ -113,6 +121,7 @@ const BestSellersProducts = [
       discountPrice: 2.75,
       discount: 37,
       rating: 3,
+      category: "Breads & brakery",
     },
     
   ];

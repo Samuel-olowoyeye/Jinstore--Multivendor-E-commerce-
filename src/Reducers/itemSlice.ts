@@ -11,7 +11,7 @@ export interface Product {
   discountPrice: number;
   discount: number;
   rating: number;
-  category: string;
+  category?: string;
   badge?: string;          
   secondImage?: string;
   thirdImage?: string;  
