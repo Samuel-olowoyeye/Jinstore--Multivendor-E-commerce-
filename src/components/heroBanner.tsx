@@ -14,7 +14,7 @@ const HeroBanner = () => {
 					</div>
 				</div>
         <div className='flex flex-row flex-shrink-0'>
-					<Image src="/assets/hero/banner/group.svg" alt="hero-banner" width={56} height={56} className='mt-[72px] w-[28px] lg:w-[56px] h-[30px] lg:h-[56px]' />
+					<Image src="/assets/hero/banner/Group.svg" alt="hero-banner" width={56} height={56} className='mt-[72px] w-[28px] lg:w-[56px] h-[30px] lg:h-[56px]' />
 					<div className='mt-[42px] pl-[8px] lg:pl-[20px]'>
 						<h2 className='mb-[6px] font-bold text-[#030712] text-[13px] lg:text-[16px]'>New stocks and sales</h2>
 						<p className='w-36 lg:w-60 xl:w-64 text-[#6b7280] text-[10px] lg:text-[13px]'>Tasigförsamhet beteendedesign. Mobile checkout. Ylig kärrtorpa.</p>

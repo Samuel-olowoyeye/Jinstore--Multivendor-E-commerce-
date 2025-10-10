@@ -17,7 +17,7 @@ const page = () => {
           <Navs />
         </Suspense>
         	
-          <Suspense fallback={<p>Loading navigation...</p>}>
+          <Suspense fallback={<p>Loading shop...</p>}>
           <Shop />
           </Suspense>
          <Footer/>
