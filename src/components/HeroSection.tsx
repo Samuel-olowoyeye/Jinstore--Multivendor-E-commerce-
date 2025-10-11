@@ -7,7 +7,7 @@ import Navs from "@/components/Navs";
 const HeroSection = () => {
   return (
     <div>
-        <Suspense fallback={<p>Loading navigation...</p>}>
+        <Suspense fallback={""}>
             <Navs />
           </Suspense>
         <Main />

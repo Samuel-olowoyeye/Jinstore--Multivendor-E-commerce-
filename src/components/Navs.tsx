@@ -26,6 +26,7 @@ const Navs = () => {
         return pathname.startsWith('/contact');
       case 'Trending Products':
         return pathname.startsWith('/trending-products'); 
+        case 'Almost Finished':
         return pathname.startsWith('/almost-finished'); 
         return false;
     }

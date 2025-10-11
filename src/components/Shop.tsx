@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Products from '@/Data/Products'
-import {ChevronRight, Funnel, LayoutGrid, LayoutList, LucideArrowUpDown, MoveRight, Plus, X } from 'lucide-react'
+import {ChevronRight, Funnel, LayoutGrid, LayoutList, MoveRight, Plus, X } from 'lucide-react'
 import React, { useEffect,useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import HeartButton from '@/ButtonComponent/HeartButton'
@@ -66,7 +66,7 @@ const Shop = () => {
 	
 
 
-	// Keep sstate in sync with URL
+	// Keep state in sync with URL
 	 useEffect(() => {
 		 const categoryParam = searchParams.get("category");
 
@@ -293,8 +293,10 @@ const Shop = () => {
 				</button> 
 				<span className='mx-2 my-0.5 border-[#6B7280] border-1'></span>
 				<button onClick={()=> setOpenSort(true)} className='flex flex-row items-center gap-2 text-[#634c9f] text-[12px] uppercase cursor-pointer'>
-					<LucideArrowUpDown  className='flex-start fill-[#634c9f] mb-0.5 w-3.5 h-3.5'/>
-					<h3>Sort</h3>
+					<svg className="flex-start fill-[#634c9f] mb-0.5 w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+						<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 20V10m0 10-3-3m3 3 3-3m5-13v10m0-10 3 3m-3-3-3 3"/>
+					</svg>
+					<h3 >Sort</h3>
 				</button>
 
 				{/* Mobile filter menu page open  */}
@@ -591,7 +593,7 @@ const Shop = () => {
                   <h3 className='pt-[10px] pr-1.5 pl-[15px] w-auto h-auto font-regular text-[#030712] text-[13px] lg:text-[14px] line-clamp-2'>{product.name}</h3>
     
                   <div className='flex flex-row items-center pt-[8px]'>
-                    <Image src="/assets/products/icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[16px] w-[47.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+                    <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[16px] w-[47.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
                     <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
                     <span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
                   </div>

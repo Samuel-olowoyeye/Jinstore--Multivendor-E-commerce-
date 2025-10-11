@@ -34,7 +34,7 @@ const BestSellers = () => {
             
               <div key={product.id}  className='border border-[#E5E7EB] w-auto lg:w-[255px] xl:w-[270px] h-[360px] lg:h-[422.38px]'>
                 <div className='relative pt-[13px] pl-[25px]'>
-                  <h3 className='inline-flex top-3 left-3 absolute bg-[#DC2626] py-[4px] lg:py-[6px] pr-[7px] lg:pr-[9.68px] pl-[6px] lg:pl-[8px] border rounded-full font-extrabold text-[#FEF2F2] text-[10px]'>{product.discount}%</h3>
+                  <h3 className='inline-flex top-3 left-3 absolute bg-[#DC2626] py-[4px] lg:py-[6px] pr-[7px] lg:pr-[9.68px] pl-[6px] lg:pl-[8px] border rounded-full font-extrabold text-[#FEF2F2] text-[8px] lg:text-[10px]'>{product.discount}%</h3>
                   <Link href={`/product/${product.id}`}>
                   <Image src={product.image} alt="New Arrival 1" width={199} height={199} className='m-auto w-[130px] lg:w-[199px] h-[135px] lg:h-[199px] object-cover cursor-pointer' />
                   </Link>
