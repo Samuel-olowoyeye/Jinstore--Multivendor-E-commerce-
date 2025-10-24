@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import HeartButton from '@/ButtonComponent/HeartButton'
 import Link from 'next/link'
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-// import { RootState } from '../store/store';
+
 
 
 import { setSortOption } from '../Reducers/CategorySlice';
@@ -131,7 +131,7 @@ const Shop = () => {
       <div className='flex flex-row justify-between items-center w-full h-[48px]'>
         <div className='flex flex-row items-center'>
           <div className='flex flex-row items-center pr-[6px]'>
-            <h1 className='pt-30 lg:pt-[22.39px] text-[#9CA3AF] text-[10px] lg:text-[12px]'>Home</h1>
+            <Link href="/" ><h1 className='pt-30 lg:pt-[22.39px] text-[#9CA3AF] text-[10px] lg:text-[12px]'>Home</h1> </Link>
             <ChevronRight className='space-x-1 mt-30.5 lg:mt-[22.39px] w-3 lg:w-4' />
           </div>
           <h1 className='pt-30 lg:pt-[22.39px] font-normal text-[#030712] text-[10px] lg:text-[12px]'>Shop</h1>
@@ -154,7 +154,7 @@ const Shop = () => {
 								<div>
 										<h3 className='pt-[20px] pb-1 text-[#6B7280] text-[12px]'>Max price</h3>
 										<input type='number' placeholder='0'  className='px-4 border-[#D1D5DB] border-1 rounded-lg lg:w-[109.44px] xl:w-[116.44px] h-[38px]'/>
-								</div>``
+								</div>
 
 							</div>
 							<div>
@@ -593,8 +593,8 @@ const Shop = () => {
                   <h3 className='pt-[10px] pr-1.5 pl-[15px] w-auto h-auto font-regular text-[#030712] text-[13px] lg:text-[14px] line-clamp-2'>{product.name}</h3>
     
                   <div className='flex flex-row items-center pt-[8px]'>
-                    <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[16px] w-[47.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
-                    <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
+                    <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[15px] w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+																		<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
                     <span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
                   </div>
     

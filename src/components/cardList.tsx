@@ -50,8 +50,9 @@ const totalPrice = calculateTotalPrice(cartItems);
           <div className='flex flex-row justify-between items-center pb-[20px] w-full h-[48px]'>
               <div className='flex flex-row items-center'>
                 <div className='flex flex-row items-center pr-[6px]'>
-                 
+                  <Link href="/" >
                     <h1 className='pt-30 lg:pt-[22.39px] text-[#9CA3AF] text-[10px] lg:text-[12px] hover:text-[#030712] cursor-pointer'>Home</h1>
+                  </Link>
                     <ChevronRight  className='space-x-1 mt-30 lg:mt-[22.39px] w-3 lg:w-4'/>
                 </div>
                   <h1 className='pt-30 lg:pt-[22.39px] font-normal text-[#030712] text-[10px] lg:text-[12px]'>Cart</h1>
@@ -123,12 +124,12 @@ const totalPrice = calculateTotalPrice(cartItems);
                 <div className='mx-auto lg:mx-3 mt-[30px] lg:mt-[60px] border border-[#E5E7EB] w-[240px] lg:w-[760px] h-auto lg:h-[61px]'>
                         <h3 className='items-center px-[34px] py-[13px] lg:pr-[220.36px] lg:pl-[236.69px] font-bold text-[#F03E3E] text-[12px] lg:text-[18px]'>Your cart is currently empty.</h3>
                 </div>
-
+                  <Link href="/shop" >
                     <button className='flex bg-[#212529] mx-auto mt-[20px] mb-4 lg:ml-[320px] pt-2.5 pr-[17.65px] pb-[13px] pl-[18px] rounded-lg lg:w-auto h-[42px] font-bold text-[#ffff] text-[12px] lg:text-[14px] cursor-pointer'>
                             Return to shop
                     </button> 
+                  </Link>
             </div>
-           
         </div>
     </div>
       )}

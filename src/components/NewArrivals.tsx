@@ -21,11 +21,12 @@ const NewArrivals = () => {
 						<h1 className='lg:pt-[32.5px] font-bold text-[#030712] text-[16px] lg:text-[18px]'>New Arrivals</h1>
 						<h3 className='pt-2 lg:pt-[38px] text-[#9CA3AF] text-[10px] lg:text-[13px]'>Don&apos;t miss this opportunity at a special discount just for this week.</h3>
 					</div>
-
+				<Link href="/shop" >
 					<button className='flex flex-row items-center gap-2 lg:gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[28px] py-[28px] pt-[10px] pb-[10px] pl-[13px] border border-[#9CA3AF] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 							View All
 							<MoveRight className='mr-[10px] lg:mr-[15px] w-2 lg:w-3 h-2 lg:h-3' />	
 					</button>
+				</Link>
 				</div>
 			
 			{/* New Arrival proucts */}
@@ -46,8 +47,8 @@ const NewArrivals = () => {
 						<h3 className='pt-[10px] pr-1.5 pl-[15px] w-auto h-auto font-regular text-[#030712] text-[13px] lg:text-[14px] line-clamp-2'>{product.name}</h3>
 
 						<div className='flex flex-row items-center pt-[15px]'>
-							<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='ml-[15px] w-[47.88px] lg:w-[67.88px] h-[10px] lg:h-[11px] object-cover' />
-							<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
+							<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[15px] w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+							<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
 							<span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
 						</div>
 
@@ -70,7 +71,7 @@ const NewArrivals = () => {
 			{/* New Arrival banners */}
 		<div className="py-8">
 			{/* Wrapper: scrollable on mobile, grid on large screens */}
-			<div className="flex gap-4 lg:grid lg:grid-cols-4 lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide">
+			<div className="flex gap-4 lg:grid lg:grid-cols-4 lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar">
 				
 				{/* Banner 1 */}
 				<div className="flex-shrink-0 w-[260px] lg:w-[307px] xl:w-[317px] h-[357px] lg:h-[397px]">
@@ -78,10 +79,12 @@ const NewArrivals = () => {
 							<h3 className='pt-[20px] pl-[20px] font-medium text-[#EA580C] text-[10px] lg:text-[12px]'>Only This Week</h3>
 							<h1 className='pt-[10px] pl-[20px] font-bold text-[#111827] lg:text-[20px] text-lg tracking-tighter'>Provides you experienced <br /> quality products</h1>
 							<h3 className='mt-[9px] pl-[20px] text-[#6B7280] text-[11px] lg:text-[13px]'>Feed your family the best</h3>
+						<Link href="/shop" >
 							<button className='flex flex-row items-center gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[19px] ml-[20px] pt-[9px] pb-[10px] pl-[13px] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 									Shop Now 
 								<MoveRight className='mr-[15px] w-3 h-3' />	
 							</button>
+						</Link>
 					</div>
 				</div>
 
@@ -91,10 +94,12 @@ const NewArrivals = () => {
 							<h3 className='pt-[20px] pl-[20px] font-medium text-[#EA580C] text-[10px] lg:text-[12px]'>Only This Week</h3>
 							<h1 className='pt-[10px] pl-[20px] font-bold text-[#111827] lg:text-[20px] text-lg tracking-tighter'>Shopping with us for better <br /> quality and the best price</h1>
 							<h3 className='mt-[9px] pl-[20px] text-[#6B7280] text-[11px] lg:text-[13px]'>Only this week. Don’t miss...</h3>
+							<Link href="/shop" >
 							<button className='flex flex-row items-center gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[19px] ml-[20px] pt-[9px] pb-[10px] pl-[13px] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 									Shop Now 
 								<MoveRight className='mr-[15px] w-3 h-3' />	
 							</button>
+						</Link>
 					</div>
 				</div>
 
@@ -104,10 +109,12 @@ const NewArrivals = () => {
 							<h3 className='pt-[20px] pl-[20px] font-medium text-[#EA580C] text-[10px] lg:text-[12px]'>Only This Week</h3>
 							<h1 className='pt-[10px] pl-[20px] font-bold text-[#111827] lg:text-[20px] text-lg tracking-tighter'>Get the best quality products <br /> at the lowest prices</h1>
 							<h3 className='mt-[9px] pl-[20px] text-[#6B7280] text-[11px] lg:text-[13px]'>A different kind of grocery store</h3>
+							<Link href="/shop" >
 							<button className='flex flex-row items-center gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[19px] ml-[20px] pt-[9px] pb-[10px] pl-[13px] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 									Shop Now 
 								<MoveRight className='mr-[15px] w-3 h-3' />	
 							</button>
+						</Link>
 					</div>
 				</div>
 
@@ -117,10 +124,12 @@ const NewArrivals = () => {
 							<h3 className='pt-[20px] pl-[20px] font-medium text-[#EA580C] text-[10px] lg:text-[12px]'>Only This Week</h3>
 							<h1 className='pt-[10px] pl-[20px] font-bold text-[#111827] lg:text-[20px] text-lg tracking-tighter'>Where you get your all favorite <br /> brands under one roof</h1>
 							<h3 className='mt-[9px] pl-[20px] text-[#6B7280] text-[11px] lg:text-[13px]'>Only this week. Don’t miss...</h3>
+							<Link href="/shop" >
 							<button className='flex flex-row items-center gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[19px] ml-[20px] pt-[9px] pb-[10px] pl-[13px] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 									Shop Now 
 								<MoveRight className='mr-[15px] w-3 h-3' />	
 							</button>
+						</Link>
 					</div>
 				</div>
 

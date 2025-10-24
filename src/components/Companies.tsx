@@ -19,7 +19,7 @@ const Companies = () => {
 							</div> 
 
 			{/* Companies stores  */}
-			<div className='flex justify-between items-center gap-2 lg:grid lg:grid-cols-4 mt-[32px] w-full h-auto lg:h-[188px] lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide'>
+			<div className='flex justify-between items-center gap-2 lg:grid lg:grid-cols-4 mt-[32px] w-full h-auto lg:h-[188px] lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar'>
 				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-r-none w-full lg:w-[340px] h-[188px]'>
 					<div className='flex flex-row items-center pt-[20px] pl-[20px]'>
 					<Image src="/assets/company/person.svg" alt="Amazon Logo" width={72} height={72} className="w-[72px] h-[72px]" />	
@@ -27,10 +27,10 @@ const Companies = () => {
 							<h1 className='font-bold text-[#030712] text-[12px]'>Machic</h1>
 							<h3 className='font-normal text-[#6B7280] text-[12px]'>Featured</h3>
 
-							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
-								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
-								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>41</span>
+							<div className='flex flex-row items-center pt-[15px]'>
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
+								<span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>41</span>
 							</div>
 					</div>
 					</div>
@@ -43,10 +43,10 @@ const Companies = () => {
 							<h1 className='font-bold text-[#030712] text-[12px]'>Blonwe</h1>
 							<h3 className='font-regular text-[#6B7280] text-[12px]'>Featured</h3>
 
-							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
-								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
-								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>37</span>
+							<div className='flex flex-row items-center pt-[15px]'>
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
+								<span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>37</span>
 							</div>
 					</div>
 					</div>
@@ -59,10 +59,10 @@ const Companies = () => {
 							<h1 className='font-bold text-[#030712] text-[12px]'>Bacola</h1>
 							<h3 className='font-regular text-[#6B7280] text-[12px]'>Featured</h3>
 
-							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
-								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
-								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>35</span>
+							<div className='flex flex-row items-center pt-[15px]'>
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
+								<span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>35</span>
 							</div>
 					</div>
 					</div>
@@ -75,10 +75,10 @@ const Companies = () => {
 							<h1 className='font-bold text-[#030712] text-[12px]'>Medibazar</h1>
 							<h3 className='font-regular text-[#6B7280] text-[12px]'>Featured</h3>
 
-							<div className='flex flex-row pt-[15px]'>
-								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='w-[67.88px] h-[11px] object-cover' />
-								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
-								<span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[12px]'>30</span>
+							<div className='flex flex-row items-center pt-[15px]'>
+								<Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+								<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
+								<span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>30</span>
 							</div>
 					</div>
 					</div>

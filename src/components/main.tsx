@@ -90,9 +90,11 @@ const Main = () => {
 					<h3 className='mt-[8.39px] w-[250.2px] lg:w-[420.2px] text-[#030712] text-[12px] lg:text-[16px]'>We have prepared special discounts for you on grocery products. Don&#39;t miss these opportunities...</h3>
 
 					<div className='flex flex-cols'>
+					<Link href="/shop" >
 						<button className='items-center bg-[#634c9f] hover:bg-violet-900 mt-[41px] pt-[8px] lg:pt-[12px] pr-[26.89px] lg:pr-[48.89px] pb-[9px] lg:pb-[13px] pl-[10px] lg:pl-[18px] rounded-lg font-bold text-[#ffffff] text-[12px] lg:text-[14px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 							Shop Now 
 						</button>
+						</Link>
 							<div className='flex flex-col mt-[37px] pl-3 lg:pl-4'>
 								<div className='flex flex-row'>
 												<p className='top-0 pr-[6px] font-bold text-[#dc2626] text-[22px] lg:text-[28px]'>$27.99</p>

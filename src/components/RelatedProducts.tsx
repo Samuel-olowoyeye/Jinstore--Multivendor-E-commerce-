@@ -7,7 +7,7 @@ import Link from 'next/link'
 const RelatedProducts = () => {
   return (
     <div className="bg-[#ffff] stroke-[#E5E7EB] pb-[60.61px] w-full h-auto text-[#6B7280]">
-          <div className='flex flex-row justify-between lg:grid lg:grid-cols-6 mt-[26px] w-full lg:w-full h-auto lg:h-[383.45px] lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide'>
+          <div className='flex flex-row justify-between lg:grid lg:grid-cols-6 mt-[26px] w-full lg:w-full h-auto lg:h-[383.45px] lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar'>
             {RelatedProduct.map((product) => (
               <div key={product.id}  className='flex-shrink-0 border border-[#E5E7EB] w-[226.67px] lg:w-auto h-auto lg:h-[395px]'>
                 <div className='relative pt-[13px] lg:pl-[25px]'>
@@ -21,8 +21,8 @@ const RelatedProducts = () => {
                   <h3 className='px-[12px] lg:px-[12px] pt-[15px] xl:pl-[16px] w-[176.72.3px] h-auto font-regular text-[#030712] text-[13px] lg:text-[14px] tracking-tighter'>{product.name}</h3>
     
                   <div className='flex flex-row px-[12px] lg:px-0 pt-[9px]'>
-                    <Image src="/assets/products/icon.svg" alt="New Arrival 1" width={50.88} height={11} className='lg:ml-[12px] xl:ml-[16px] w-[50.88px] h-[11px] object-cover' />
-                    <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[14.35px] h-[11px] object-cover' />
+                    <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='lg:ml-[15px] w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+                                    <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
                     <span className='-mt-[3px] pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
                   </div>
     

@@ -21,11 +21,12 @@ const FeaturedProducts = () => {
                 <h1 className='pt-[32.5px] font-bold text-[#030712] text-[16px] lg:text-[18px]'>Featured Products</h1>
                 <h3 className='pt-2 lg:pt-[38px] text-[#9CA3AF] text-[10px] lg:text-[13px]'>Do not miss the current offers until the end of March.</h3>
               </div>
-    
+            <Link href="/shop" >
               <button className='flex flex-row items-center gap-2 lg:gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[28px] py-[28px] pt-[10px] pb-[10px] pl-[13px] border border-[#9CA3AF] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
                   View All
                   <MoveRight className='mr-[10px] lg:mr-[15px] w-2 lg:w-3 h-2 lg:h-3' />	
               </button>
+            </Link>
             </div>
           
           {/* Featured products*/}
@@ -47,9 +48,9 @@ const FeaturedProducts = () => {
                   <div>
                     <h3 className='px-[15px] pt-[10px] w-auto lg:w-[230.4px] h-auto font-regular text-[#030712] text-[13px] lg:text-[14px] tracking-tighter'>{product.name}</h3>
                     <div className='flex flex-row items-center pt-[15px]'>
-                      <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={67.88} height={11} className='ml-[15px] w-[47.88px] lg:w-[67.88px] h-[10px] lg:h-[11px] object-cover' />
-                      <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
-                      <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
+                      <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[15px] w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+                      <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
+                      <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' /> 
                       <span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
                     </div>
       
@@ -78,16 +79,18 @@ const FeaturedProducts = () => {
             </div>
                
           {/* Featured products banners  */}
-          <div className='flex justify-between gap-2 lg:grid lg:grid-cols-2 py-8 lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide'>
+          <div className='flex justify-between gap-2 lg:grid lg:grid-cols-2 py-8 lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar'>
                 <div className='flex-row flex-shrink-0 bg-[url("/assets/products/banner08.svg")] bg-cover bg-no-repeat bg-center rounded-lg w-full lg:w-[626px] xl:w-[666px] h-[227.23px] lg:h-[280.5px]'>
                   <div>
                       <h3 className='inline-flex bg-[#FFEDD5] mt-[30px] lg:mt-[50px] ml-[30px] px-[10px] py-[4px] rounded-full font-semibold text-[#7C2D12] text-[10px] lg:text-[12px]'>Only This Week</h3>
                       <h1 className='pt-[15px] pl-[30px] font-extrabold text-[#111827] text-[18px] lg:text-[28px] leading-8 tracking-tighter'>Make your grocery <br /> shopping easy with us</h1>
                       <h3 className='mt-[9px] pl-[30px] text-[#6B7280] text-[11px] lg:text-[13px]'>Only this week. Don’t miss...</h3>
+                    <Link href="/shop" >
                       <button className='flex flex-row items-center gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[19px] ml-[30px] pt-[9px] pb-[10px] pl-[13px] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
                           Shop Now 
                         <MoveRight className='mr-[15px] w-3 h-3' />	
                       </button>
+                    </Link>  
                   </div>
                 </div>
                 <div className='flex-row flex-shrink-0 bg-[url("/assets/products/banner09.svg")] bg-cover bg-no-repeat bg-center rounded-lg w-full lg:w-[626px] xl:w-[666px] h-[227.23px] lg:h-[280.5px]'>
@@ -95,10 +98,12 @@ const FeaturedProducts = () => {
                         <h3 className='inline-flex bg-[#FFEDD5] mt-[30px] lg:mt-[50px] ml-[30px] px-[10px] py-[4px] rounded-full font-semibold text-[#7C2D12] text-[10px] lg:text-[12px]'>Only This Week</h3>
                         <h1 className='pt-[15px] pl-[30px] font-extrabold text-[#111827] text-[18px] lg:text-[28px] leading-8 tracking-tighter'>Get your everyday <br /> needs here with us</h1>
                         <h3 className='mt-[9px] pl-[30px] text-[#6B7280] text-[13px]'>Only this week. Don’t miss...</h3>
-                        <button className='flex flex-row items-center gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[19px] ml-[30px] pt-[9px] pb-[10px] pl-[13px] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
-                            Shop Now 
-                          <MoveRight className='mr-[15px] w-3 h-3' />	
-                        </button>
+                        <Link href="/shop" >
+                      <button className='flex flex-row items-center gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[19px] ml-[30px] pt-[9px] pb-[10px] pl-[13px] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
+                          Shop Now 
+                        <MoveRight className='mr-[15px] w-3 h-3' />	
+                      </button>
+                    </Link>  
                     </div>
                 </div>
                 

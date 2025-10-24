@@ -21,11 +21,12 @@ const BestSellers = () => {
                 <h1 className='lg:pt-[32.5px] font-bold text-[#030712] text-[16px] lg:text-[18px]'>Best Sellers</h1>
                 <h3 className='pt-2 lg:pt-[38px] text-[#9CA3AF] text-[10px] lg:text-[13px]'>Some of the new products arriving this weeks</h3>
               </div>
-    
+            <Link href="/shop" >
               <button className='relative flex flex-row items-center gap-2 lg:gap-[6px] bg-[#ffffff] hover:bg-[#634C9F] mt-[28px] py-[28px] pt-[10px] pb-[10px] pl-[13px] border border-[#9CA3AF] rounded-full font-bold text-[#212529] text-[10px] lg:text-[12px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
                   View All
                   <MoveRight className='mr-[10px] lg:mr-[15px] w-2 lg:w-3 h-2 lg:h-3' />
               </button>
+              </Link>
             </div>
           
           {/* Bestsellers proucts */}
@@ -45,8 +46,8 @@ const BestSellers = () => {
     
                   <div className='flex flex-row items-center pt-[9px]'>
                     <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[15px] w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
-                    <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[14.35px] h-[10px] lg:h-[11px] object-cover' />
-                    <span className='mt-0.5 lg:mt-0 pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
+                    <Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
+                    <span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
                   </div>
     
                   <div className='flex flex-row pt-[5px] pb-[3px]'>

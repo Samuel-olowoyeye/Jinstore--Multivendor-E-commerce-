@@ -38,7 +38,9 @@ const SavedItem = () => {
       <div className='flex flex-row justify-between items-center lg:pb-[20px] w-full h-[48px]'>
         <div className='flex flex-row items-center'>
           <div className='flex flex-row items-center pr-[6px]'>
+            <Link href="/" >
             <h1 className='pt-30 lg:pt-[22.39px] text-[#9CA3AF] text-[10px] lg:text-[12px] hover:text-[#030712] cursor-pointer'>Home</h1>
+            </Link>
             <ChevronRight className='space-x-1 mt-30 lg:mt-[22.39px] w-4' />
           </div>
           <h1 className='pt-30 lg:pt-[22.39px] font-normal text-[#030712] text-[10px] lg:text-[12px]'>Saved Item</h1>
@@ -109,7 +111,7 @@ const SavedItem = () => {
       )}
 
 
-      <div className='items-center mt-4'>
+      <div className='items-center mt-4 xl:ml-36'>
             <Pagination>
               <PaginationContent>
                 <PaginationItem>
