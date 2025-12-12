@@ -29,7 +29,7 @@ const FeaturedProducts = () => {
 	const handleAddToCart = (product: Product) => {
 		 dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }));
 
-		 toast.success("Product Added to Cart Successfully"); 
+		 toast.success("Product Added Successfully"); 
 
 		}
 
