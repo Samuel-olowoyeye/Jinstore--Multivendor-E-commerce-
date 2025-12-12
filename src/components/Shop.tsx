@@ -19,11 +19,23 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination"
-import { Slider } from "@/components/ui/slider"
+// import { Slider } from "@/components/ui/slider"
 import { Product } from '@/Reducers/itemSlice'
 import { useSearchParams} from "next/navigation";
 
 const Shop = () => {
+
+	const [activeTabId, setActiveTabId] = useState('grid')
+	const [minPrice, setMinPrice] = useState(0)
+	const [maxPrice, setMaxPrice] = useState(30)
+
+	const [minPriceInput, setMinPriceInput] = useState(0)
+	const [maxPriceInput, setMaxPriceInput] = useState(30)
+
+
+	const handleClick  = (id:string) => {
+		setActiveTabId(id)
+	}
 
 	const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 20;
@@ -35,6 +47,8 @@ const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sortOption = useSelector((state: any) => state.category.sortOption);
+
+	
 
 		{/* filter and sort menu open functionality */}
 		const [openFilter, setOpenFilter] = useState(false)
@@ -67,25 +81,57 @@ const Shop = () => {
 
 
 	// Keep state in sync with URL
-	 useEffect(() => {
-		 const categoryParam = searchParams.get("category");
+	//  useEffect(() => {
+	// 	 const categoryParam = searchParams.get("category");
 
-    if (categoryParam) {
-      if (categoryParam === "fruits-vegetables") {
-        setSelectedCategory("Fruits & Vegetables");
-      } else if (categoryParam === "beverages") {
-        setSelectedCategory("Beverages");
-      }
-    } else {
-      setSelectedCategory("All Categories");
-    }
-  }, [searchParams]);
+  //   if (categoryParam) {
+  //     if (categoryParam === "fruits-vegetables") {
+  //       setSelectedCategory("Fruits & Vegetables");
+  //     } else if (categoryParam === "beverages") {
+  //       setSelectedCategory("Beverages");
+  //     }
+  //   } else {
+  //     setSelectedCategory("All Categories");
+  //   }
+  // }, [searchParams]);
+
+
+	useEffect(() => {
+  const categoryParam = searchParams.get("category");
+
+  const categoryMap: Record<string, string> = {
+    "fruits-vegetables": "Fruits & Vegetables",
+    "beverages": "Beverages",
+    "baby-pregnancy": "Baby & Pregnancy",
+    "meats-seafood": "Meats & Seafood",
+    "breads-bakery": "Breads & Bakery",
+    "biscuits-snacks": "Biscuits & Snacks",
+    "breakfast-dairy": "Breakfast & Dairy",
+    "frozen-foods": "Frozen Foods",
+    "grocery-staples": "Grocery & Staples",
+    "healthcare": "Healthcare",
+    "household-needs": "Household Needs",
+  };
+
+  if (!categoryParam) {
+    setSelectedCategory("All Categories");
+    return;
+  }
+
+  setSelectedCategory(categoryMap[categoryParam] || "All Categories");
+}, [searchParams]);
+
+
+
 	const dispatch = useDispatch();
 
 	const handleSortChange = (option: string) => {
     dispatch(setSortOption(option));
+		setOpenSort(false);
 		
   };
+
+	
 
 	const handleCategoryClick = (category: string) => {
     // dispatch(setCategory(category));
@@ -97,6 +143,8 @@ const Shop = () => {
 	const filterByCategory = (products: any[], category: string) => {
     return category === 'All Categories' ? products : products.filter(product => product.category === category);
   };
+
+	
 	
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const sortProducts = (products: any[], sortOption: any) => {
@@ -110,10 +158,31 @@ const Shop = () => {
         return products; // Define relevance logic if needed
     }
   };
+
+	
+	const filterByPrice = (products: Product[], min: number | null, max: number | null) => {
+  if (min === null || max === null) return products
+  return products.filter(p => p.price >= min && p.price <= max)
+}
+
+
+
 	const filteredProducts = sortProducts(
-    (filterByCategory(Products, selectedCategory)),
-    sortOption
-  );
+  filterByPrice(
+    filterByCategory(Products, selectedCategory),
+    minPrice,
+    maxPrice
+  ),
+  sortOption
+);
+
+const handleFilter = () => {
+  setMinPrice(minPriceInput);
+  setMaxPrice(maxPriceInput);
+	setOpenFilter(false)
+};
+
+
 
 	const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
 
@@ -148,21 +217,21 @@ const Shop = () => {
 						<div className='flex flex-row'>
 								<div>
 										<h3 className='pt-[20px] pb-1 text-[#6B7280] text-[12px]'>Min price</h3>
-										<input type='number' placeholder='0'  className='px-4 border-[#D1D5DB] border-1 rounded-lg lg:w-[109.44px] xl:w-[116.44px] h-[38px]'/>
+										<input type='number' min={0} max={30} value={minPriceInput} onChange={(e) => setMinPriceInput(Number(e.target.value))}  className='px-4 border-[#D1D5DB] border-1 rounded-lg lg:w-[109.44px] xl:w-[116.44px] h-[38px]'/>
 										<span className='px-2 text-[#030712]'>-</span>
 								</div>					
 								<div>
 										<h3 className='pt-[20px] pb-1 text-[#6B7280] text-[12px]'>Max price</h3>
-										<input type='number' placeholder='0'  className='px-4 border-[#D1D5DB] border-1 rounded-lg lg:w-[109.44px] xl:w-[116.44px] h-[38px]'/>
+										<input type='number' min={0} max={30} value={maxPriceInput} onChange={(e) => setMaxPriceInput(Number(e.target.value))}  className='px-4 border-[#D1D5DB] border-1 rounded-lg lg:w-[109.44px] xl:w-[116.44px] h-[38px]'/>
 								</div>
 
 							</div>
 							<div>
-								<Slider defaultValue={[0]} max={30} step={1} className='pt-[20px]' />
+								{/* <Slider defaultValue={[0]} max={30} step={1} className='pt-[20px]' /> */}
 								</div>
 							<div className='flex flex-row justify-between items-center mb-[26px] pt-[30.5px]'>
-										<h2 className='text-[#030712] text-[14px]'>Price: $0 — $30</h2>
-										<button className='bg-[#E5E7EB] pt-[10px] pr-[17.7px] pb-[11px] pl-[18px] rounded-lg font-bold text-[#000000] text-[14px]'>
+										<h2 className='text-[#030712] text-[14px]'>Price: ${minPriceInput} — ${maxPriceInput}</h2>
+										<button onClick={handleFilter} className='bg-[#E5E7EB] pt-[10px] pr-[17.7px] pb-[11px] pl-[18px] rounded-lg font-bold text-[#000000] text-[14px]'>
 											Filter
 										</button>
 							</div>
@@ -221,8 +290,8 @@ const Shop = () => {
 								</div>
 									<div className='flex flex-row justify-between items-center pt-[14px]'>
 										<label className='flex flex-row items-center gap-[10px]'>
-												<input checked={selectedCategory === 'Breaksfast & Dairy'}  onChange={() => handleCategoryClick('Breaksfast & Dairy')} type='checkbox' className='w-4 h-4' />
-												<h2 className='font-medium text-[#030712] text-[14px] hover:text-[#634C9F] active:text-[#634C9F]'>Breaksfast & Dairy</h2>
+												<input checked={selectedCategory === 'Breakfast & Dairy'}  onChange={() => handleCategoryClick('Breaksfast & Dairy')} type='checkbox' className='w-4 h-4' />
+												<h2 className='font-medium text-[#030712] text-[14px] hover:text-[#634C9F] active:text-[#634C9F]'>Breakfast & Dairy</h2>
 										</label>
 
 										<Plus className='mr-2 w-4 text-[#636363]' />
@@ -243,18 +312,6 @@ const Shop = () => {
 												<input checked={selectedCategory === 'Household Needs'}  onChange={() => handleCategoryClick('Household Needs')} type='checkbox' className='w-4 h-4' />
 												<h2 className='font-medium text-[#030712] text-[14px] hover:text-[#634C9F] active:text-[#634C9F]'>Household Needs</h2>
 										</label>
-						</div>
-
-					<div className='pt-[25px] border-[#E5E7EB] border-b-1' >
-						<h2 className='font-semibold text-[#030712] text-[14px]'>Filter by Color</h2>
-						<div className='flex flex-row justify-between items-center pt-[21px] pb-[29px]'>
-										<div className='flex flex-row items-center gap-[10px]'>
-												<span className='bg-[#81D742] border rounded-full w-[20px] h-[20px]'></span>
-												<h2 className='font-medium text-[#030712] text-[14px] hover:text-[#634C9F] active:text-[#634C9F]'>Green</h2>
-										</div>
-
-										<h3 className='text-[#9CA3AF] text-[14px]'>(1)</h3>
-								</div>
 						</div>
 
 					<div className='pt-[25px] border-[#E5E7EB] border-b-1' >
@@ -319,21 +376,21 @@ const Shop = () => {
 						<div className='flex flex-row'>
 								<div>
 										<h3 className='pt-[20px] pb-1 text-[#6B7280] text-[12px]'>Min price</h3>
-										<input type='number' placeholder='0'  className='mx-auto px-4 border-[#D1D5DB] border-1 rounded-lg w-full h-[38px]'/>
+										<input type='number' min={0} max={30} value={minPriceInput} onChange={(e) => setMinPriceInput(Number(e.target.value))}  className='mx-auto px-4 border-[#D1D5DB] border-1 rounded-lg w-[109.44px] h-[38px]'/>
 								</div>
 								<span className='px-4 pt-[48px] pb-1 text-[#030712]'>-</span>					
 								<div>
 										<h3 className='pt-[20px] pb-1 text-[#6B7280] text-[12px]'>Max price</h3>
-										<input type='number' placeholder='0'  className='mx-auto px-4 border-[#D1D5DB] border-1 rounded-lg w-full h-[38px]'/>
+										<input type='number' min={0} max={30} value={maxPriceInput} onChange={(e) => setMaxPriceInput(Number(e.target.value))}  className='mx-auto px-4 border-[#D1D5DB] border-1 rounded-lg w-[109.44px] h-[38px]'/>
 								</div>
 
 							</div>
 							<div>
-								<Slider defaultValue={[0]} max={30} step={1} className='pt-[20px]' />
+								{/* <Slider defaultValue={[0]} max={30} step={1} className='pt-[20px]' /> */}
 								</div>
 							<div className='flex flex-row justify-between items-center mb-[26px] pt-[30.5px]'>
-										<h2 className='text-[#030712] text-[14px]'>Price: $0 — $30</h2>
-										<button className='bg-[#E5E7EB] pt-[10px] pr-[17.7px] pb-[11px] pl-[18px] rounded-lg font-bold text-[#000000] text-[14px]'>
+										<h2 className='text-[#030712] text-[14px]'>Price: ${minPriceInput} — ${maxPriceInput}</h2>
+										<button onClick={handleFilter} className='bg-[#E5E7EB] pt-[10px] pr-[17.7px] pb-[11px] pl-[18px] rounded-lg font-bold text-[#000000] text-[14px]'>
 											Filter
 										</button>
 							</div>
@@ -417,18 +474,6 @@ const Shop = () => {
 						</div>
 
 					<div className='pt-[25px] border-[#E5E7EB] border-b-1' >
-						<h2 className='font-semibold text-[#030712] text-[14px]'>Filter by Color</h2>
-						<div className='flex flex-row justify-between items-center pt-[21px] pb-[29px]'>
-										<div className='flex flex-row items-center gap-[10px]'>
-												<span className='bg-[#81D742] border rounded-full w-[20px] h-[20px]'></span>
-												<h2 className='font-medium text-[#030712] text-[14px] hover:text-[#634C9F] active:text-[#634C9F]'>Green</h2>
-										</div>
-
-										<h3 className='text-[#9CA3AF] text-[14px]'>(1)</h3>
-								</div>
-						</div>
-
-					<div className='pt-[25px] border-[#E5E7EB] border-b-1' >
 						<h2 className='font-semibold text-[#030712] text-[14px]'>Filter by Brands</h2>
 						<div className='flex flex-row justify-between items-center pt-[21px] pb-[29px]'>
 										<div className='flex flex-row items-center gap-[10px]'>
@@ -476,10 +521,10 @@ const Shop = () => {
 							</div>
 
 							<div className="flex flex-col">
-						<RadioGroup defaultValue="option-one">
+						<RadioGroup value={sortOption} onValueChange={handleSortChange}>
 							<div className='flex flex-row items-center gap-2 py-3 border-y-1'>
-								<RadioGroupItem value="option-one" id="option-one" />
-								<label htmlFor="option-one"
+								<RadioGroupItem value="Relevance" id="sort-relevance" />
+								<label htmlFor="sort-relevance"
 											className={`px-2 bg-white text-[12px] text-start  font-semibold ${sortOption === 'Relevance' ? 'bg-gray-300' : ''}`}
 											onClick={() => handleSortChange('Relevance')}
 										>
@@ -488,8 +533,8 @@ const Shop = () => {
 								</div>
 
 								<div className='flex flex-row items-center gap-2 py-3 border-b-1'>
-									<RadioGroupItem value="option-two" id="option-two" /> 
-									<label htmlFor="option-two"
+									<RadioGroupItem value="Price - High To Low" id="sort-high" /> 
+									<label htmlFor="sort-high"
 										className={`px-2 bg-white text-[12px] text-start font-semibold ${sortOption === 'Price - High To Low' ? 'bg-gray-300' : ''}`}
 										onClick={() => handleSortChange('Price - High To Low')}
 									>
@@ -498,8 +543,8 @@ const Shop = () => {
 								</div>
 
 								<div className='flex flex-row items-center gap-2 py-3 border-b-1'>
-									<RadioGroupItem value="option-three" id="option-three" />
-									<label htmlFor="option-three"
+									<RadioGroupItem value="Price - Low To High" id="sort-low" />
+									<label htmlFor="sort-low"
 										className={`px-2 bg-white text-[12px] text-start font-semibold ${sortOption === 'Price - Low To High' ? 'bg-gray-300' : ''}`}
 										onClick={() => handleSortChange('Price - Low To High')}
 									>
@@ -508,11 +553,6 @@ const Shop = () => {
 								</div>
 					</RadioGroup>		
 						</div>
-					<div className='flex justify-end px-2 py-6'>
-						<button className='px-6 py-1 border text-[12px]'>
-							Apply
-						</button>
-					</div>
 				</div>
 			</div>
 		)}	
@@ -521,7 +561,7 @@ const Shop = () => {
 			
 			{/* Right side  */}	
 			<div className='lg:w-[980.5px] xl:w-[1042.5px] h-auto text-[#030712]'>
-					<span className='pb-[25px] font-medium text-[#555555] text-[12px] lg:text-[14px]'>x Clear filters x {selectedCategory}</span>
+					<button className='pb-[25px] lg:pb-0 font-medium text-[#555555] text-[12px] lg:text-[14px]'>x Clear filters x {selectedCategory}</button>
 
 		{/* banner  */}
 			<div className='bg-[url("/assets/banner/banner33.svg")] bg-cover bg-no-repeat bg-center mt-[25px] rounded-sm w-full h-auto'>
@@ -565,21 +605,22 @@ const Shop = () => {
 									</button>
 								</div>
 									<div className='flex flex-row gap-2 lg:gap-1'>
-										<button className='bg-[#D1D5DB] lg:my-4 p-1 lg:pt-[7.73px] lg:pr-[9.15px] lg:pb-[7.57px] lg:pl-[6.16px] border rounded-sm lg:rounded-lg'>
-											<LayoutGrid className='w-[11.69px] lg:w-[14.69px] h-[11.71px] lg:h-[14.71px] text-[#6B7280]' />
+										<button className= { activeTabId === 'grid' ? 'bg-[#D1D5DB] lg:my-4 p-1 lg:pt-[7.73px] lg:pr-[9.15px] lg:pb-[7.57px] lg:pl-[6.16px] border rounded-sm lg:rounded-lg':'bg-none   '}>
+											<LayoutGrid id='grid' onClick={()=> handleClick('grid')} className='w-[11.69px] lg:w-[14.69px] h-[11.71px] lg:h-[14.71px] text-[#6B7280]' />
 										</button>
-										<button className='lg:my-4 lg:pt-[7.73px] lg:pr-[9.15px] lg:pb-[7.57px] lg:pl-[6.16px] rounded-lg'>
+										<button id='list' onClick={()=> handleClick('list')} className={ activeTabId === 'list' ? 'bg-[#D1D5DB] lg:my-4 p-1 lg:pt-[7.73px] lg:pr-[9.15px] lg:pb-[7.57px] lg:pl-[6.16px] border rounded-sm lg:rounded-lg':'bg-none'}>
 											<LayoutList className='w-[11.69px] lg:w-[14.69px] h-[11.71px] lg:h-[14.71px]' />
 										</button>
 									</div>
 								</div>
 							</div>
-					</div>
+					</div>. 
 
 					{/* Products  */}
 
 					<div className="bg-[#ffff] stroke-[#E5E7EB] mt-[10px] pb-[60.61px] lg:w-[980.5px] xl:w-[1042.5px] h-auto text-[#6B7280]">
-          <div className ='grid grid-cols-2 lg:grid-cols-5  border-[#E5E7EB]   '>
+          { activeTabId === 'grid' ?
+						<div className ='grid grid-cols-2 lg:grid-cols-5  border-[#E5E7EB]   '>
             {currentProducts.map((product: Product) => (							
               <div key={product.id}  className='border border-[#E5E7EB] lg:w-[197px] xl:w-[210px] h-auto cursor-pointer'>
                 <div className='relative pt-[13px] pl-[25px]'>
@@ -616,7 +657,46 @@ const Shop = () => {
 							</div>
 						
              ))}
-        </div>
+        </div> : <div className ='grid grid-cols-1 lg:grid-cols-2 border-[#E5E7EB]  '>
+            {currentProducts.map((product: Product) => (							
+              <div key={product.id}  className='flex flex-row gap-2 border border-[#E5E7EB] w-full h-auto cursor-pointer'>
+               
+							  <div className='relative pt-[13px] pl-[25px]'>
+                  <h3 className='inline-flex top-3 left-3 absolute bg-[#DC2626] py-[4px] lg:py-[6px] pr-[7px] lg:pr-[9.68px] pl-[6px] lg:pl-[8px] border rounded-full font-extrabold text-[#FEF2F2] text-[8px] lg:text-[10px]'>{product.discount}%</h3>
+									<Link href={`/product/${product.id}`}> 
+										<Image src={product.image} alt="New Arrival 1" width={152.5} height={152.5} className='mx-auto w-[152.5px] lg:w-[152.5px] h-[130px] lg:h-[152.5px] object-cover cursor-pointer' />
+                  </Link>
+									<HeartButton product={product} />
+                </div>
+                
+								<div>
+                  <h3 className='pt-[10px] pr-1.5 pl-[15px] w-auto h-auto font-regular text-[#030712] text-[13px] lg:text-[14px] line-clamp-2'>{product.name}</h3>
+    
+                  <div className='flex flex-row items-center pt-[8px]'>
+                    <Image src="/assets/products/Icon.svg" alt="New Arrival 1" width={50.88} height={11} className='ml-[15px] w-[43.88px] lg:w-[50.88px] h-[10px] lg:h-[11px] object-cover' />
+																		<Image src="/assets/products/star.svg" alt="New Arrival 1" width={14.35} height={11} className='w-[10.35px] lg:w-[11.35px] h-[10px] lg:h-[11px] object-cover' />
+                    <span className='pl-[8px] text-[#6b7280] text-[10px] lg:text-[12px]'>{product.rating}</span>
+                  </div>
+    
+                  <div className='flex flex-row pt-[5px]'>
+                      <p className='top-0 mb-[12px] ml-[15px] pr-[6px] font-bold text-[#dc2626] text-[18px] lg:text-[22px]'>${product.price}</p>
+                      <p className='pt-2 font-medium text-[#111827] text-[14.1px] lg:text-[16.1px] line-through'>${product.discountPrice}</p>
+                  </div>
+
+									<div >
+									<div className='flex flex-row px-[12px] lg:px-0 pb-4 lg:pl-[15px]'>
+											<div className='bg-[#16A34A] border border-[#E5E7EB] rounded-lg w-[36px] h-[36px]'>
+												<Image src="/assets/header/cart.svg" alt="cart" width={18.6} height={15} className="my-[9.79px] ml-[7.16px] w-[18.6px] h-[15px]" />
+											</div>
+				
+											<h3 className='my-[12.79px] ml-2 font-bold text-[#16A34A] text-[11px]'>In Stock</h3>
+										</div>
+								</div>
+                </div>
+
+							</div>
+             ))}
+        </div> }
        </div>
 			</div>	
 		</div>
@@ -672,3 +752,5 @@ const Shop = () => {
 }
 
 export default Shop
+
+

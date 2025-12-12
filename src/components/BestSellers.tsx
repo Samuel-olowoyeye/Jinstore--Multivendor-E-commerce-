@@ -7,11 +7,32 @@ import HeartButton from '@/ButtonComponent/HeartButton'
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../Reducers/cartSlice'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 
 const BestSellers = () => {
 
   const dispatch = useDispatch();
+  
+  
+    interface Product {
+    id: string;
+    image: string;
+    badge: string;
+    name: string;
+    description: string;
+    price: number;
+    discountPrice: number;
+    discount: number;
+    rating: number;
+  }
+  
+    const handleAddToCart = (product: Product) => {
+       dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }));
+  
+       toast.success("Product Added to Cart Successfully"); 
+  
+      }
 
   return (
     <div className='bg-[#ffff] px-4 lg:px-[80px] 2xl:px-[600px] xl:px-[280px] w-full h-auto'>
@@ -57,7 +78,7 @@ const BestSellers = () => {
                 </div>
     
                 <div className='flex flex-row justify-between'>
-                    <button onClick={() => dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }))}  className='flex flex-row justify-between items-center bg-[#FFFFFF] hover:bg-[#634C9F] mx-2 ml-[15px] pt-[6px] lg:pt-[9px] pr-[15px] pb-[6px] lg:pb-[9px] pl-[10px] lg:pl-[15px] border border-[#634C9F] rounded-full w-full lg:w-[220px] font-medium text-[#634C9F] text-[11px] lg:text-[13px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
+                    <button onClick={() => handleAddToCart(product)}  className='flex flex-row justify-between items-center bg-[#FFFFFF] hover:bg-[#634C9F] mx-2 ml-[15px] pt-[6px] lg:pt-[9px] pr-[15px] pb-[6px] lg:pb-[9px] pl-[10px] lg:pl-[15px] border border-[#634C9F] rounded-full w-full lg:w-[220px] font-medium text-[#634C9F] text-[11px] lg:text-[13px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
                       Add to cart
                       <Plus className='w-[16px] h-[16px]' />
                     </button>
@@ -69,7 +90,7 @@ const BestSellers = () => {
         
 
           {/* New Arrival banners  */}
-          <div className='py-[8px] lg:py-[32px]'>
+          <div className='hidden lg:block lg:py-[32px]'>
             <Image src="/assets/products/banner.svg" alt="arrow Image" width={1360} height={85} className="w-full h-[85px] object-center" />
           </div> 
       </div>

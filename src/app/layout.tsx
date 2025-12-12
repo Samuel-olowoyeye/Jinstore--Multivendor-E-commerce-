@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import "flowbite";
 import { Providers } from './providers'
+import {Toaster} from "react-hot-toast";
 
 
 
@@ -26,6 +28,7 @@ export default function RootLayout({
         
       >
         <Providers>
+          <Toaster position="top-center" reverseOrder={false} />
           {children}
         </Providers>
       </body>

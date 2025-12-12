@@ -24,16 +24,16 @@ const navigation = [
 const Categories = [
     { title: "All Categories", href: "/shop", icon: <LayoutDashboard className='w-4 h-4'/> },
     { title: "Fruits & Vegetables ", href: "/shop?category=fruits-vegetables", icon: <Apple className='w-4 h-4'/>  },
-    { title: "Meats & Seafood", href: "/shop?category=Meats-Seafood", icon: <Beef className='w-4 h-4'/>  },
-    { title: "Breakfast & Dairy", href: "Breakfast & Dairy", icon: <Egg className='w-4 h-4'/>  },
-    { title: "Breads & brakery", href: "Breads & brakery", icon: <Palette className='w-4 h-4'/>  },
+    { title: "Meats & Seafood", href: "/shop?category=meats-seafood", icon: <Beef className='w-4 h-4'/>  },
+    { title: "Breakfast & Dairy", href:"/shop?category=breakfast-dairy", icon: <Egg className='w-4 h-4'/>  },
+    { title: "Breads & brakery", href: "/shop?category=breads-bakery", icon: <Palette className='w-4 h-4'/>  },
     { title: "Beverages", href: "/shop?category=beverages", icon: <Coffee className='w-4 h-4'/> },
-    { title: "Frozen Foods", href: "Frozen Foods", icon: <Snowflake className='w-4 h-4'/>},
-    { title: "Biscuits & Snacks", href: "Biscuits & Snacks", icon: <Wheat className='w-4 h-4'/>},
-    { title: "Grocery & Staples", href: "Grocery & Staples", icon: <Flower2 className='w-4 h-4'/>},
-    { title: "Household Needs", href: "Household Needs", icon: <BrushCleaning className='w-4 h-4'/>},
-    { title: "Healthcare", href: "Healthcare", icon: <Database className='w-4 h-4'/>},
-    { title: "Baby & Pregnancy", href: "Baby & Pregnancy", icon: <Baby className='w-4 h-4'/>},
+    { title: "Frozen Foods", href: "/shop?category=frozen-foods", icon: <Snowflake className='w-4 h-4'/>},
+    { title: "Biscuits & Snacks", href: "/shop?category=biscuits-snacks", icon: <Wheat className='w-4 h-4'/>},
+    { title: "Grocery & Staples", href: "/shop?category=grocery-staples", icon: <Flower2 className='w-4 h-4'/>},
+    { title: "Household Needs", href: "/shop?category=household-needs", icon: <BrushCleaning className='w-4 h-4'/>},
+    { title: "Healthcare", href: "/shop?category=healthcare", icon: <Database className='w-4 h-4'/>},
+    { title: "Baby & Pregnancy", href: "/shop?category=baby-pregnancy", icon: <Baby className='w-4 h-4'/>},
   ];
 
 

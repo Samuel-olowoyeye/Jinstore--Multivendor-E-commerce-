@@ -1,9 +1,20 @@
+"use client"
 import React from 'react'
 import { ChevronRight} from "lucide-react"
 import Link from 'next/link'
+import TextInput from './TextInput'
+import { useForm } from 'react-hook-form'
 
 
 const LoginForm = () => {
+
+	const {
+			register,
+			// handleSubmit,
+			// reset,
+			formState: { errors },
+		} = useForm();
+
   return (
      <div className='bg-[#ffff] stroke-[#E5E7EB] px-4 lg:px-[80px] 2xl:px-[600px] xl:px-[280px] pb-[150.61px] text-[#6B7280]'>
 				<div className='flex flex-row justify-between items-center pb-[20px] w-full h-[48px]'>
@@ -30,11 +41,23 @@ const LoginForm = () => {
 								
 								<div>
 									<form className='flex flex-col px-[5px]'>
-										<label className='pt-[15.25px] pb-[5.75px] text-[#6B7280] text-[13px]'>Username or email address *</label>
-										<input type="text" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]'/>
+										<TextInput
+										label="Username or email address *"
+										name="Username or email address"
+										type='email'
+										register={register}
+										errors={errors}
+										className="mt-[15.25px] w-full"
+										/>
 
-										<label className='mt-[15.25px] text-[#6B7280] text-[12px]'>Password</label>
-										<input type="password" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]' />
+										<TextInput
+										label="Password"
+										name="password"
+										type='password'
+										register={register}
+										errors={errors}
+										className="mt-[15.25px] w-full text-[12px]"
+										/>
 
 										<div className='flex flex-row justify-between mt-[16.5px]'>
 											<div className='flex flex-row items-center'>
@@ -44,8 +67,10 @@ const LoginForm = () => {
 											<a href="#" className='text-[#1D4ED8] text-[12px]'>Lost your password?</a>
 										</div>
 
-										<button type="submit" className='bg-[#634c9f] mt-[24px] rounded-lg h-[48px] font-semibold text-[14px] text-white'>Login</button>
+										<button  type="submit" className='bg-[#634c9f] mt-[24px] rounded-lg h-[48px] font-semibold text-[14px] text-white'>Login</button>
 									</form>
+
+									
 								</div>
 
 				</div>

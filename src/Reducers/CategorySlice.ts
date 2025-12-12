@@ -1,4 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
+import Products from '@/Data/Products';
+import { sortProducts } from '@/helper/sortProducts';
+
+
 
 const categorySlice = createSlice({
   name: 'category',
@@ -6,6 +10,7 @@ const categorySlice = createSlice({
     category: 'All Categories',
     priceRange: 'All',
     sortOption: 'Relevance',
+    products: Products,
   },
   reducers: {
     setCategory: (state, action) => {
@@ -16,6 +21,7 @@ const categorySlice = createSlice({
     },
     setSortOption: (state, action) => {
       state.sortOption = action.payload;
+      state.products = sortProducts(state.products, action.payload);
     },
   },
 });

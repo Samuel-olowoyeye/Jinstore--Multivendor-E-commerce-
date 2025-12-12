@@ -39,8 +39,8 @@ const Navs = () => {
     { label: 'Beverages',href: "/shop?category=beverages" },
     { label: 'Blog', href: '/blog' },
     { label: 'Contact', href: '/contact' },
-    { label: 'Trending Products', href: '/trending-products' },
-    { label: 'Almost Finished', href: '/almost-finished', sale: true },
+    { label: 'Trending Products', href: '/trendingProducts' },
+    { label: 'Almost Finished', href: '/almostFinished', sale: true },
   ];
 
   return (

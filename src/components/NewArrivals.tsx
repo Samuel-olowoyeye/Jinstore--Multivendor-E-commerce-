@@ -7,11 +7,33 @@ import { addItemToCart } from '../Reducers/cartSlice'
 import { MoveRight } from 'lucide-react';
 // import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import toast from 'react-hot-toast';
+
 
 
 const NewArrivals = () => {
+	// toast.success("User Created Successfully");
+	
+  const dispatch = useDispatch();
 
-  	const dispatch = useDispatch();
+	interface Product {
+  id: string;
+  image: string;
+  badge: string;
+  name: string;
+  description: string;
+  price: number;
+  discountPrice: number;
+  discount: number;
+  rating: number;
+}
+
+	const handleAddToCart = (product: Product) => {
+		 dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }));
+
+		 toast.success("Product Added to Cart Successfully"); 
+
+		}
   
   return (
     <div className='bg-[#ffff] px-4 lg:px-[80px] 2xl:px-[600px] xl:px-[280px] w-full h-auto'>
@@ -58,7 +80,7 @@ const NewArrivals = () => {
 							</div>
 					</div>
 
-					<button onClick={() => dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }))} className='items-center bg-[#FFFFFF] hover:bg-[#634C9F] mb-[15px] ml-[15px] pt-[6px] lg:pt-[9px] pr-[70px] xl:pr-[117px] pb-[6px] lg:pb-[9px] pl-[10px] lg:pl-[15px] border-[#634C9F] border-1 rounded-full font-medium text-[#634C9F] text-[11px] lg:text-[13px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
+					<button onClick={() => handleAddToCart(product)}  className='items-center bg-[#FFFFFF] hover:bg-[#634C9F] mb-[15px] ml-[15px] pt-[6px] lg:pt-[9px] pr-[70px] xl:pr-[117px] pb-[6px] lg:pb-[9px] pl-[10px] lg:pl-[15px] border-[#634C9F] border-1 rounded-full font-medium text-[#634C9F] text-[11px] lg:text-[13px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 						Add to cart
 					</button>
 

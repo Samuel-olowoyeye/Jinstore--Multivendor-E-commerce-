@@ -10,13 +10,30 @@ import NotFound from './NotFound';
 import Products from '../Data/Products';
 import { useParams} from 'next/navigation';
 import Link from 'next/link';
-import { toggleSavedItem, isItemSaved, Product } from '../Reducers/itemSlice';
+import { toggleSavedItem, isItemSaved, } from '../Reducers/itemSlice';
 import { RootState } from '../store/store';
+import toast from 'react-hot-toast';
 
 
 
 
 function ProductDetails() {
+
+	interface Product {
+  id: string;
+  image: string;
+  badge?: string;
+  secondImage?: string;
+  thirdImage?: string;
+  name: string;
+  description: string;
+  price: number;
+  discountPrice: number;
+  discount: number;
+  rating: number;
+  category?: string;
+}
+
 	
 	const dispatch = useDispatch();
 	const params = useParams();
@@ -62,6 +79,14 @@ const quantity = cartItem ? cartItem.quantity : 1;
 if (!product) {
 	return <NotFound />;
 }
+
+const handleAddToCart = (product: Product) => {
+		 dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }));
+
+		 toast.success("Product Added to Cart Successfully"); 
+
+		}
+
 
 
 const increaseQuantity = (itemId: number | string) => {
@@ -155,7 +180,7 @@ const decreaseQuantity = (itemId: number | string) => {
 							<button onClick={() => increaseQuantity(product.id)}><Plus className='w-[11.05] h-[11.05]' /></button>
 						</div>
 
-						<button onClick={() => dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }))} className='flex flex-row gap-2 bg-[#16A34A] hover:bg-green-700 pt-[12px] lg:pt-[14px] pr-8 lg:pb-[15px] pl-3 lg:pl-[33.42px] rounded-lg w-auto lg:w-[160px] h-[40px] lg:h-[46px] font-bold text-[#ffff] text-[10px] lg:text-[14px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
+						<button onClick={() => handleAddToCart(product)}  className='flex flex-row gap-2 bg-[#16A34A] hover:bg-green-700 pt-[12px] lg:pt-[14px] pr-8 lg:pb-[15px] pl-3 lg:pl-[33.42px] rounded-lg w-auto lg:w-[160px] h-[40px] lg:h-[46px] font-bold text-[#ffff] text-[10px] lg:text-[14px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
 							<ShoppingCart className='lg:mt-0.5 w-3 lg:w-[14px] h-3 lg:h-[14px]' /> Add to cart
 						</button>
 						<Link href="/cartList">

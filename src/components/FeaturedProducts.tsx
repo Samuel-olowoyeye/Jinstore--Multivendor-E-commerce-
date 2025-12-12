@@ -7,11 +7,31 @@ import HeartButton from '@/ButtonComponent/HeartButton'
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../Reducers/cartSlice'
 import Link from 'next/link'
+import toast from 'react-hot-toast'
 
 
 const FeaturedProducts = () => {
 
   const dispatch = useDispatch();
+
+  interface Product {
+  id: string;
+  image: string;
+  badge: string;
+  name: string;
+  description: string;
+  price: number;
+  discountPrice: number;
+  discount: number;
+  rating: number;
+}
+
+	const handleAddToCart = (product: Product) => {
+		 dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }));
+
+		 toast.success("Product Added to Cart Successfully"); 
+
+		}
 
   return (
     <div className='bg-[#ffff] px-4 lg:px-[80px] 2xl:px-[600px] xl:px-[280px] w-full h-auto'>
@@ -59,7 +79,7 @@ const FeaturedProducts = () => {
                             <p className='ml-[2px] pt-2 font-medium text-[#111827] text-[14.1px] lg:text-[16.1px] line-through'>${product.discountPrice}</p>
                       </div>
                     <div className='flex flex-row justify-between lg:mx-3 mr-6 ml-3'>
-                        <button onClick={() => dispatch(addItemToCart({ ...product, id: String(product.id), quantity: 1 }))} className='flex flex-row justify-between items-center bg-[#FFFFFF] hover:bg-[#634C9F] mb-[15px] pt-[6px] lg:pt-[9px] pr-[15px] pb-[6px] lg:pb-[9px] pl-[10px] lg:pl-[15px] border border-[#634C9F] rounded-full w-full font-medium text-[#634C9F] text-[11px] lg:text-[13px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
+                        <button  onClick={() => handleAddToCart(product)} className='flex flex-row justify-between items-center bg-[#FFFFFF] hover:bg-[#634C9F] mb-[15px] pt-[6px] lg:pt-[9px] pr-[15px] pb-[6px] lg:pb-[9px] pl-[10px] lg:pl-[15px] border border-[#634C9F] rounded-full w-full font-medium text-[#634C9F] text-[11px] lg:text-[13px] hover:text-[#FFFFFF] transition-all duration-100 ease-in cursor-pointer'>
                           Add to cart
                           <Plus className='w-[13px] lg:w-[16px] h-[13px] lg:h-[16px]' />
                         </button>

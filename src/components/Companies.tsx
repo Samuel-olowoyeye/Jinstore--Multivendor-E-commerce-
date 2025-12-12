@@ -19,8 +19,8 @@ const Companies = () => {
 							</div> 
 
 			{/* Companies stores  */}
-			<div className='flex justify-between items-center gap-2 lg:grid lg:grid-cols-4 mt-[32px] w-full h-auto lg:h-[188px] lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar'>
-				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-r-none w-full lg:w-[340px] h-[188px]'>
+			<div className='flex justify-between items-center gap-2 lg:gap-0 lg:grid lg:grid-cols-4 mt-[32px] w-full h-auto lg:h-[188px] lg:overflow-visible overflow-x-auto scroll-smooth scrollbar-hide no-scrollbar'>
+				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-r-none w-full h-[188px]'>
 					<div className='flex flex-row items-center pt-[20px] pl-[20px]'>
 					<Image src="/assets/company/person.svg" alt="Amazon Logo" width={72} height={72} className="w-[72px] h-[72px]" />	
 					<div className='pl-[20px]'>
@@ -36,7 +36,7 @@ const Companies = () => {
 					</div>
 						<p className='mt-[20px] mr-[21px] ml-[16px] pt-[16px] border-[#E5E7EB] border-t-[1px] font-normal text-[#030712] text-[12px] tracking-tighter'>Good quality product can only be found in good stores</p>	
 			</div>	
-				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-none w-full lg:w-[340px] h-[188px]'>
+				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-none w-full h-[188px]'>
 					<div className='flex flex-row items-center pt-[20px] pl-[20px]'>
 					<Image src="/assets/company/person.svg" alt="Amazon Logo" width={72} height={72} className="w-[72px] h-[72px]" />	
 					<div className='pl-[20px]'>
@@ -52,7 +52,7 @@ const Companies = () => {
 					</div>
 						<p className='mt-[20px] mr-[21px] ml-[16px] pt-[16px] border-[#E5E7EB] border-t-[1px] font-normal text-[#030712] text-[12px] tracking-tighter'>All kinds of grocery products are available in our store.</p>	
 			</div>	
-				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-none w-full lg:w-[340px] h-[188px]'>
+				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-none w-full h-[188px]'>
 					<div className='flex flex-row items-center pt-[20px] pl-[20px]'>
 					<Image src="/assets/company/person.svg" alt="Amazon Logo" width={72} height={72} className="w-[72px] h-[72px]" />	
 					<div className='pl-[20px]'>
@@ -68,7 +68,7 @@ const Companies = () => {
 					</div>
 						<p className='mt-[20px] mr-[21px] ml-[16px] pt-[16px] border-[#E5E7EB] border-t-[1px] font-normal text-[#030712] text-[12px] tracking-tighter'>Our work can definitely support the local economy.</p>	
 			</div>	
-				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-l-none w-full lg:w-[340px] h-[188px]'>
+				<div className='flex-col flex-shrink-0 border border-[#E5E7EB] rounded-xl lg:rounded-l-none w-full h-[188px]'>
 					<div className='flex flex-row items-center pt-[20px] pl-[20px]'>
 					<Image src="/assets/company/person.svg" alt="Amazon Logo" width={72} height={72} className="w-[72px] h-[72px]" />	
 					<div className='pl-[20px]'>

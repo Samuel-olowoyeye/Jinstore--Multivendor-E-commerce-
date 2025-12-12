@@ -3,9 +3,20 @@ import {ChevronRight} from "lucide-react"
 import Link from 'next/link'
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import TextInput from './TextInput'
+import { useForm } from 'react-hook-form'
 
 
 const RegisterForm = () => {
+
+	const {
+				register,
+				// handleSubmit,
+				// reset,
+				formState: { errors },
+			} = useForm();
+	
+
   return (
     <div className='bg-[#ffff] stroke-[#E5E7EB] px-4 lg:px-[80px] 2xl:px-[600px] xl:px-[280px] pb-[167.61px] w-full h-auto text-[#6B7280]'>
         <div className='flex flex-row justify-between items-center pb-[20px] w-full h-[48px]'>
@@ -32,14 +43,32 @@ const RegisterForm = () => {
                         
 								<div>
 										<form className='flex flex-col px-[5px]'>
-												<label className='pt-[15.25px] pb-[5.75px] text-[#6B7280] text-[13px]'>Username *</label>
-												<input type="text" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]'/>
+											 <TextInput
+												label="Username *"
+												name="username"
+												type='text'
+												register={register}
+												errors={errors}
+												className="mt-[15.25px] w-full"
+												/>
 
-												<label className='pt-[15.25px] pb-[5.75px] text-[#6B7280] text-[13px]'>Email address *</label>
-												<input type="email" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]'/>
+											<TextInput
+												label="Email address *"
+												name="email Address"
+												type='email'
+												register={register}
+												errors={errors}
+												className="mt-[15.25px] w-full"
+												/>
 
-												<label className='mt-[15.25px] text-[#6B7280] text-[12px]'>Password</label>
-												<input type="password" className='mt-[8px] px-4 border-[#E5E7EB] border-1 rounded-lg h-[42px]' />
+											<TextInput
+												label="Password"
+												name="password"
+												type='password'
+												register={register}
+												errors={errors}
+												className="mt-[15.25px] w-full"
+												/> 
 
 												<div className='flex flex-col justify-between mt-[16.5px]'>
 													<RadioGroup defaultValue="option-one">
