@@ -7,8 +7,8 @@ import Link from 'next/link';
 
 const slides = [
   { id: 1, src: "/assets/hero/sliders/slider-01.jpg.svg", alt: 'Slide 1', heading: "Get the best quality products at the lowest prices" },
-  { id: 2, src: "/assets/hero/sliders/slider-03.jpg.svg", alt: 'Slide 2', heading: "Get the best quality products at the lowest prices" },
-  { id: 3, src: "/assets/hero/sliders/elements01.svg", alt: 'Slide 2', heading: "Shopping with us for better quality and the best price" },
+  { id: 2, src: "/assets/hero/sliders/elements01.svg", alt: 'Slide 2', heading: "Shopping with us for better quality and the best price" },
+  { id: 3, src: "/assets/hero/sliders/slider-03.jpg.svg", alt: 'Slide 2', heading: "Get the best quality products at the lowest prices" },
   // Add more slides as needed
 ];
 
