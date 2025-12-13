@@ -1,0 +1,19 @@
+{
+  "name": "jinstore",
+  "version": "1.0.0",
+  "description": "this is the backend for jinstore multivendor website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samuel-olowoyeye/Jinstore--Multivendor-E-commerce-.git"
+  },
+  "author": "samuel olowoyeye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samuel-olowoyeye/Jinstore--Multivendor-E-commerce-/issues"
+  },
+  "homepage": "https://github.com/Samuel-olowoyeye/Jinstore--Multivendor-E-commerce-#readme"
+}
