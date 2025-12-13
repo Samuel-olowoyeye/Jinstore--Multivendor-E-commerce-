@@ -23,7 +23,7 @@ const HeartButton: React.FC<HeartButtonProps> = ({ product }) => {
         isFavorited ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-600'
       }`}
     >
-      <Heart className="w-[14.86px] h-[14.5px] " />
+      <Heart className="w-[14.86px] h-[14.5px]" />
     </button>
   );
 };

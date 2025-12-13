@@ -1,6 +1,6 @@
 "use client"
 
-import Blogs from '@/Data/Blogs'
+import Blogs from '@/app/Frontend/Data/Blogs'
 import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'

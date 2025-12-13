@@ -23,9 +23,9 @@ const TrendingProducts = () => {
     <div className='bg-[#ffff] stroke-[#E5E7EB] mt-24 lg:mt-0 pb-[60.61px] lg:w-[1920px] lg:h-[552.61px] text-[#6B7280]'>
           <div className='flex flex-col pt-[20px] lg:w-[1440px] lg:h-[472px]'>
             <div className='mx-auto lg:mx-[340px] lg:mt-[73px] lg:w-[760px] h-auto lg:h-[359px]'>
-              <Image src="/assets/hero/banner/boxes.svg" alt="empty-cart" width={200} height={460} className='mx-auto lg:mx-[140px] w-[60px] lg:w-[460px] h-[60px] lg:h-[200px]' />
+              <Image src="/assets/hero/banner/boxes.svg" alt="empty-cart" width={200} height={460} className='mx-auto lg:mx-[140px] w-[200px] lg:w-[460px] h-[80px] lg:h-[200px]' />
               <div className='mx-auto lg:mx-3 mt-[30px] lg:mt-[60px] border border-[#E5E7EB] w-[260px] lg:w-[760px] h-auto lg:h-[61px]'>
-                <h3 className='items-center px-[36px] py-[13px] lg:pr-[220.36px] lg:pl-[206.69px] font-bold text-[#F03E3E] text-[12px] lg:text-[18px]'>
+                <h3 className='items-center px-[36px] py-[13px] lg:pr-[220.36px] lg:pl-[206.69px] font-bold text-[#F03E3E] text-[12px] lg:text-[18px] text-center'>
                   still working on the ui for trending page 
                 </h3>
               </div>

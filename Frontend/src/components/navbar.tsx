@@ -17,8 +17,8 @@ const navigation = [
     { title: "Beverages", href: "/shop?category=beverages", icon: <Coffee className='w-4 h-4'/> },
     { title: "Blog", href: "/blog", icon: <MessageCircleMore className='w-4 h-4'/>},
     { title: "Contact", href: "/contact", icon: <UserRound className='w-4 h-4'/> },
-    { title: "Trending Products", href: "/Trending products", icon: <Package className='w-4 h-4'/> },
-    { title: "Almost Finished", href: "/Almost Finished", icon: <ChartNoAxesCombined className='w-4 h-4'/> },
+    { title: "Trending Products", href: "/trendingProducts", icon: <Package className='w-4 h-4'/> },
+    { title: "Almost Finished", href: "/almostFinished", icon: <ChartNoAxesCombined className='w-4 h-4'/> },
   ];
 
 const Categories = [
